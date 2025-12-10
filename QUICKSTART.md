@@ -2,7 +2,7 @@
 
 > Create your first video script in 5 minutes
 
-[中文文档](QUICKSTART_CN.md)
+[中文文档](docs/zh-CN/QUICKSTART.md)
 
 ---
 
@@ -11,13 +11,13 @@
 ### Option 1: npx (Recommended, no installation needed)
 
 ```bash
-npx @genkicap/genkicap-workflow
+npx @waoooo/genkicap-workflow
 ```
 
 ### Option 2: Global Installation
 
 ```bash
-npm install -g @genkicap/genkicap-workflow
+npm install -g @waoooo/genkicap-workflow
 genkicap-workflow
 ```
 
@@ -30,7 +30,7 @@ genkicap-workflow
 After running the CLI tool, select **"1. Complete Initialization"**:
 
 ```bash
-npx @genkicap/genkicap-workflow
+npx @waoooo/genkicap-workflow
 # or
 genkicap-workflow
 ```
@@ -232,5 +232,5 @@ A: Both Chinese and English are supported for interface and output content.
 **Start your video script creation journey now! 🚀**
 
 ```bash
-npx @genkicap/genkicap-workflow
+npx @waoooo/genkicap-workflow
 ```

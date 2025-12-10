@@ -1,17 +1,50 @@
 ---
-name: Base
-description: Universal YouTube framework with natural language patterns, flexible structure for any content type.
+name: Base Framework (Multi-Platform)
+description: Universal YouTube framework with natural language patterns, flexible for any content type. Supports one-click adaptation for Bilibili/Douyin/Xiaohongshu
 type: core    # core, custom. if custom must have user instructions
-platform: youtube
+platform: youtube,bilibili,douyin,xiaohongshu  # Multi-platform support
 language: en-US
 ---
 
 ## Template Content
 
 ```
-# Universal YouTube Script Framework - High-Retention Foundation
+# Universal YouTube Script Framework - High-Retention Foundation (Multi-Platform)
 
 Create engaging, value-dense scripts that sound natural when spoken and keep viewers watching.
+
+**Multi-Platform Note**: This template is designed for YouTube deep-content style and can be adapted for Bilibili/Douyin/Xiaohongshu through trimming.
+For detailed multi-platform adaptation guidelines, see: references/templates/workflow/script-multiplatform.md
+
+---
+
+## Quick Platform Adaptation Guide
+
+### YouTube (Master Version, Full Depth)
+- Duration: 8-15 minutes
+- Hook: 20-30 seconds
+- Pacing: Moderate, allows for setup
+- Style: Professional, in-depth, complete narrative
+
+### Bilibili (70-80% Content)
+- Duration: 5-10 minutes
+- Hook: 15-25 seconds
+- Trimming Strategy: Remove lengthy setups and deep explanations, keep examples
+- Style: Youth-oriented, high knowledge density, bullet-comment friendly
+
+### Douyin (20-30% Content, Extract Core)
+- Duration: 30-60 seconds
+- Hook: 3-5 seconds (must be extremely fast)
+- Trimming Strategy: Keep only core information points, remove all setup
+- Style: High impact, single message point, strong CTA
+
+### Xiaohongshu (40-50% Content, Lifestyle Rewrite)
+- Duration: 1-3 minutes
+- Hook: 8-12 seconds
+- Trimming Strategy: Lifestyle expressions, add emojis, visual descriptions
+- Style: Approachable, relaxed, beautiful visuals
+
+---
 
 ## WHEN CREATING AN OUTLINE:
 Structure your outline proportionally to the content:
@@ -34,7 +67,7 @@ Include section headings but write as if talking directly to viewers.
   - Quick value promise: 1-2 sentences max (40-50 words)
   - Jump to content immediately
 - Conclusion: 15 seconds max (50-75 words MAXIMUM)
-  - Single key takeaway: 1 sentence (15-25 words)
+  - Single key takeaway or final thought: 1 sentence (15-25 words)
   - CTA: 1-2 sentences (25-40 words)
   - End abruptly - viewers expect this
 - Never exceed 2 minutes on any setup
@@ -58,6 +91,23 @@ IMPORTANT: Conclusions are NOT summaries. Just a quick CTA and done.
 - Lead with a surprising fact or statistic
 - Present a problem viewers didn't know they had
 - Tease a transformation viewers want
+
+### Multi-Platform Hook Adaptation Examples
+
+**YouTube Full Version** (~30 seconds):
+"Over the past year, I've tested 50 AI tools and wasted thousands of dollars. But today, I'm sharing 5 tools actually worth paying for that can boost your productivity 10x. More importantly, I'll tell you why 90% of people are using AI tools wrong—a mistake that might be costing you 2 hours every single day."
+
+**Bilibili Trimmed Version** (~20 seconds):
+"I've tested 50 AI tools this year. Today I'm sharing 5 actually worth paying for that boost productivity 10x. 90% of people use AI tools wrong—this mistake costs you 2 hours daily."
+[Removed: Personal emotion setup, kept core information]
+
+**Douyin Minimal Version** (~5 seconds):
+"90% of people use AI tools wrong! Today I'll tell you the right way."
+[Only the most impactful information]
+
+**Xiaohongshu Lifestyle Version** (~10 seconds):
+"Hey friends! Have you also stepped on AI tool landmines? I tested 50, today sharing 5 actually useful ones! ✨"
+[Lifestyle expression + emoji + relatability]
 
 ## UNIVERSAL LANGUAGE PATTERNS:
 - "Here's what actually happens..." (revealing truth)
@@ -143,22 +193,22 @@ PATTERN INTERRUPTS (follow the 30-second rule):
 - Direct address: "You probably think..."
 - Mini-reveals: Small victories between major points
 
-    ## FACTUALITY & RESEARCH DISCIPLINE:
+## FACTUALITY & RESEARCH DISCIPLINE:
 
 FOR FICTIONAL CONTENT:
 - Creative invention allowed
 - Don't present fiction as fact
 - Don't fabricate real-world statistics
 
-    FOR NON-FICTION CONTENT:
-    - Don't invent facts, dates, quotes, numbers
-    - Use only provided research/context
-    - Include only verified quotes
-    - Avoid unsupported speculation
-    - Mark theories as theories
-    - Write in your own words — do not lift phrasing from sources
-    - Use direct quotes only when the exact wording matters; put quotes in quotation marks with brief attribution (e.g., "according to [source]")
-    - Select only the essential facts that move the narrative forward; avoid info-dumps that reduce engagement
+FOR NON-FICTION CONTENT:
+- Don't invent facts, dates, quotes, numbers
+- Use only provided research/context
+- Include only verified quotes
+- Avoid unsupported speculation
+- Mark theories as theories
+- Write in your own words — do not lift phrasing from sources
+- Use direct quotes only when the exact wording matters; put quotes in quotation marks with brief attribution (e.g., "according to [source]")
+- Select only the essential facts that move the narrative forward; avoid info-dumps that reduce engagement
 
 ## WRITING THE CONCLUSION (CRITICAL):
 Keep it EXTREMELY brief - 50-75 words MAXIMUM:
@@ -172,6 +222,20 @@ Example conclusion (52 words):
 
 DO NOT EXCEED 75 WORDS FOR THE CONCLUSION!
 
+### Multi-Platform CTA Adaptation Examples
+
+**YouTube Full Version** (~30 seconds):
+"If you want to dive deep into building a complete AI workflow, I'll break down my entire system in the next video. Click the video card in the top right to watch it now. If this video helped you, don't forget to like and subscribe, and hit the notification bell."
+
+**Bilibili Version** (~20 seconds):
+"If this helped, remember to one-tap triple support (like, coin, favorite)! Follow me, next time I'll share AI tool combination tips. See you next time!"
+
+**Douyin Version** (~5 seconds):
+"Follow me for daily AI tool tips!"
+
+**Xiaohongshu Version** (~10 seconds):
+"Remember to like and save if you enjoyed! 💖 See you in comments! I reply to every friend~"
+
 ## QUALITY CHECKPOINTS:
 For creation and editing, ensure:
 1) Hook validates title promise immediately (~100 words)
@@ -180,7 +244,7 @@ For creation and editing, ensure:
 4) Natural conversational flow
 5) Transitions maintain momentum
 6) Facts accurate (if non-fiction)
-7) Conclusion is BRIEF - 50-100 words max
+7) Conclusion is BRIEF - 50-75 words max
 8) Energy and engagement consistent
 9) Voice authentic to creator
 10) Viewer knows what to do next

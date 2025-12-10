@@ -1,12 +1,12 @@
-# Video-workflow v1.0 - Content-Driven Mode
+# Genkicap Video Workflow v1.0 - Topic-Driven Mode
 
-> Professional video script creation workflow - From content ideas to executable scripts
+> Professional video script creation workflow - From topic ideas to executable scripts
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/waoooolab/genkicap-genkicap-workflow-v1.0)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Mode](https://img.shields.io/badge/mode-Content--Driven-orange.svg)](#)
+[![Mode](https://img.shields.io/badge/mode-Topic--Driven-orange.svg)](#)
 
-[中文文档](README_CN.md)
+[中文文档](docs/zh-CN/README.md)
 
 ---
 
@@ -27,7 +27,7 @@
 
 ## Introduction
 
-**Video-workflow v1.0** is a content-driven video script creation workflow system. It helps creators transform a content idea into high-quality, executable video scripts through a systematic **7-stage process**.
+**Genkicap Video Workflow v1.0** is a topic-driven video script creation workflow system. It helps creators transform a topic idea into high-quality, executable video scripts through a systematic **7-stage process**.
 
 ### Core Philosophy
 
@@ -68,8 +68,8 @@ Stage 7: Final Output → script.md (final script) ⭐
 
 #### Free Version (Multilingual Support)
 - **2 Universal Templates**: One Chinese and one English base template
-  - `zh-CN/通用版.md` - Chinese universal template
-  - `en-US/Base.md` - English universal template
+  - `zh-CN/base.md` - Chinese universal template (multi-platform)
+  - `en-US/base.md` - English universal template (multi-platform)
 - **Smart Language Matching**: Auto-selects template based on your AI output language preference
 
 #### Premium Version (Upgrade to unlock)
@@ -106,7 +106,7 @@ Stage 7: Final Output → script.md (final script) ⭐
 
 ```bash
 # Run CLI tool directly
-npx @genkicap/genkicap-workflow
+npx @waoooo/genkicap-workflow
 
 # Select: 1. Complete Initialization
 # Follow the prompts to configure
@@ -123,7 +123,7 @@ cd your-workspace-name
 
 ```bash
 # Global install
-npm install -g @genkicap/genkicap-workflow
+npm install -g @waoooo/genkicap-workflow
 
 # Run CLI
 genkicap-workflow
@@ -266,10 +266,12 @@ workspace-name/
 │   └── template/
 │       ├── script/
 │       │   ├── en-US/         # English templates
-│       │   │   └── Base.md
+│       │   │   └── base.md
 │       │   └── zh-CN/         # Chinese templates
-│       │       └── 通用版.md
+│       │       └── base.md
 │       └── stage/             # Stage templates
+│           ├── en-US/         # English stage outputs
+│           └── zh-CN/         # Chinese stage outputs
 ├── references/
 │   ├── _GUIDE.md              # Reference guide
 │   └── templates/             # Additional templates
@@ -303,8 +305,8 @@ v1.0 free version provides **2 universal templates**:
 
 | Language | Template Name | Path | Use Cases |
 |----------|--------------|------|-----------|
-| Chinese | 通用版 | `zh-CN/通用版.md` | All Chinese video types |
-| English | Base | `en-US/Base.md` | All English video types |
+| Chinese | Base (Multi-Platform) | `zh-CN/base.md` | YouTube/Bilibili/Douyin/Xiaohongshu |
+| English | Base (Multi-Platform) | `en-US/base.md` | YouTube/Bilibili/Douyin/Xiaohongshu |
 
 **Features**:
 - ✅ Multilingual support (Chinese/English)
@@ -322,12 +324,14 @@ v1.0 free version provides **2 universal templates**:
 
 ### Premium Templates (Upgrade to unlock)
 
+> 🚧 **Coming Soon** - Premium professional templates launching soon
+
 Upgrade to unlock **15+ professional templates**:
 
 | Category | Template List | Language Support | Use Cases |
 |----------|--------------|------------------|-----------|
 | **Long-form** | Educational, Review, Documentary, Explainer, Commentary, Compilation, Story, VSL, etc. | Chinese/English | 5-15 minutes |
-| **Short-form** | Shorts-Educational, Shorts-Viral, Shorts-Review, Shorts-Ad, Shorts-Story, etc. | Chinese/English | 15 seconds-3 minutes |
+| **Short-form** | Educational, Viral, Review, Ad, Story, etc. | Chinese/English | 15 seconds-3 minutes |
 
 **Premium Benefits**:
 - 🎯 15+ professional vertical templates
@@ -337,7 +341,7 @@ Upgrade to unlock **15+ professional templates**:
 - 🎁 Priority access to new templates
 - 💬 Priority technical support
 
-> 💡 **How to Upgrade**: Run `genkicap-workflow`, select **"4. Upgrade"** (Coming Soon in v1.1.0)
+> 💡 **How to Upgrade**: Run `genkicap-workflow`, select **"4. Upgrade (Coming Soon)"**
 
 ---
 
@@ -432,7 +436,7 @@ You want to:
 ### npx Execution (Recommended)
 
 ```bash
-npx @genkicap/genkicap-workflow
+npx @waoooo/genkicap-workflow
 ```
 
 No installation needed, run CLI tool directly.
@@ -440,7 +444,7 @@ No installation needed, run CLI tool directly.
 ### Global Installation
 
 ```bash
-npm install -g @genkicap/genkicap-workflow
+npm install -g @waoooo/genkicap-workflow
 genkicap-workflow  # or gw
 ```
 
@@ -574,7 +578,7 @@ genkicap-workflow
 # Select: X. Uninstall
 ```
 
-Executes `npm uninstall -g @genkicap/genkicap-workflow`
+Executes `npm uninstall -g @waoooo/genkicap-workflow`
 
 ---
 

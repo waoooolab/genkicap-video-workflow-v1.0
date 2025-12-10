@@ -2,6 +2,8 @@
 
 > 5 分钟开始你的第一个视频脚本创作
 
+[English](../../QUICKSTART.md)
+
 ---
 
 ## 📦 安装
@@ -9,13 +11,13 @@
 ### 方式1: npx (推荐，无需安装)
 
 ```bash
-npx @genkicap/genkicap-workflow
+npx @waoooo/genkicap-workflow
 ```
 
 ### 方式2: 全局安装
 
 ```bash
-npm install -g @genkicap/genkicap-workflow
+npm install -g @waoooo/genkicap-workflow
 genkicap-workflow
 ```
 
@@ -28,7 +30,7 @@ genkicap-workflow
 运行 CLI 工具后，选择 **"1. 完整初始化"**：
 
 ```bash
-npx @genkicap/genkicap-workflow
+npx @waoooo/genkicap-workflow
 # 或
 genkicap-workflow
 ```
@@ -204,7 +206,7 @@ AI 会在调研和框架设计时自动读取。
 ## ❓ 常见问题
 
 **Q: 首次使用需要配置什么？**
-A: 运行 `npx @genkicap/genkicap-workflow`，选择 "1. 完整初始化"，按提示填写即可。
+A: 运行 `npx @waoooo/genkicap-workflow`，选择 "1. 完整初始化"，按提示填写即可。
 
 **Q: 配置保存在哪里？**
 A: `config.json` 文件，可随时用菜单 5 修改。
@@ -235,7 +237,7 @@ A: v1.1.0 版本 (预计 2-4 周后)，将支持 15+ 专业模板。
 
 ```bash
 # 1. 运行 CLI
-npx @genkicap/genkicap-workflow
+npx @waoooo/genkicap-workflow
 
 # 2. 选择: 1. 完整初始化
 

@@ -7,7 +7,7 @@
 无需安装,直接运行:
 
 ```bash
-npx @genkicap/genkicap-workflow
+npx @waoooo/genkicap-workflow
 ```
 
 这会自动:
@@ -19,7 +19,7 @@ npx @genkicap/genkicap-workflow
 ### 方式2: 全局安装
 
 ```bash
-npm install -g @genkicap/genkicap-workflow
+npm install -g @waoooo/genkicap-workflow
 ```
 
 然后在任意项目目录中运行:
@@ -33,7 +33,7 @@ gw
 ### 方式3: 本地安装
 
 ```bash
-npm install @genkicap/genkicap-workflow
+npm install @waoooo/genkicap-workflow
 ```
 
 安装后会自动运行配置向导。
@@ -169,7 +169,7 @@ your-project/
 
 ```bash
 # 使用 npx
-npx @genkicap/genkicap-workflow
+npx @waoooo/genkicap-workflow
 
 # 或全局命令
 genkicap-workflow
