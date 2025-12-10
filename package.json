@@ -4,8 +4,8 @@
   "description": "Video script workflow - Content-Driven | 视频脚本工作流 - 选题梳理驱动",
   "main": "index.js",
   "bin": {
-    "genkicap-workflow": "./bin/setup.js",
-    "gw": "./bin/setup.js"
+    "genkicap-workflow": "bin/setup.js",
+    "gw": "bin/setup.js"
   },
   "scripts": {
     "setup": "node bin/setup.js",
@@ -25,7 +25,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/waoooolab/genkicap-video-workflow-v1.0.git"
+    "url": "git+https://github.com/waoooolab/genkicap-video-workflow-v1.0.git"
   },
   "files": [
     "bin/",
