@@ -1,0 +1,22 @@
+# Development docs (not for npm package)
+.claude/template/stage/README.md
+CLI_TODO.md
+PROJECT_STATUS.md
+VERSION_ROADMAP.md
+TODO.md
+note.md
+ARCHITECTURE.md
+REFACTOR.md
+PUBLISH_GUIDE.md
+RELEASE_CHECKLIST.md
+RELEASE_READY.md
+
+# Test files
+test/
+*.test.js
+
+# Chinese docs (keep English as default for npm)
+README_CN.md
+QUICKSTART_CN.md
+CLI_COMMANDS_CN.md
+INSTALL_CN.md

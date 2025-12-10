@@ -1,0 +1,48 @@
+# Development docs (not for Git repo)
+.claude/template/stage/README.md
+CLI_TODO.md
+CLI_COMMANDS.md
+CLI_COMMANDS_CN.md
+PROJECT_STATUS.md
+VERSION_ROADMAP.md
+TODO.md
+note.md
+ARCHITECTURE.md
+REFACTOR.md
+PUBLISH_GUIDE.md
+PUSH_GUIDE.md
+RELEASE_CHECKLIST.md
+RELEASE_READY.md
+publish.sh
+
+# Test files
+test/
+*.test.js
+
+# 用户工作目录
+scripts/*/
+
+# 系统文件
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 临时文件
+*.tmp
+*.temp
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# 备份文件
+*.bak
+*.backup

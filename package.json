@@ -1,0 +1,55 @@
+{
+  "name": "@genkicap/video-workflow",
+  "version": "1.0.0",
+  "description": "Video script workflow - Content-Driven | 视频脚本工作流 - 选题梳理驱动",
+  "main": "index.js",
+  "bin": {
+    "genkicap-workflow": "./bin/setup.js",
+    "gw": "./bin/setup.js"
+  },
+  "scripts": {
+    "setup": "node bin/setup.js",
+    "postinstall": "node bin/setup.js"
+  },
+  "keywords": [
+    "video",
+    "script",
+    "workflow",
+    "content-driven",
+    "脚本生成",
+    "视频创作",
+    "claude",
+    "ai"
+  ],
+  "author": "waoooolab",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waoooolab/genkicap-video-workflow-v1.0.git"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "references/_GUIDE.md",
+    "scripts/_GUIDE.md",
+    ".claude/CLAUDE.md",
+    ".claude/template/script/en-US/Base.md",
+    ".claude/template/script/zh-CN/通用版.md",
+    ".claude/template/stage/idea.md",
+    ".claude/template/stage/research.md",
+    ".claude/template/stage/frame.md",
+    ".claude/template/stage/outline.md",
+    ".claude/template/stage/draft.md",
+    ".claude/template/stage/script.md",
+    "README.md",
+    "QUICKSTART.md",
+    "INSTALL.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "peerDependencies": {
+    "@anthropic-ai/sdk": "^0.x.x"
+  }
+}
