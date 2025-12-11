@@ -1,18 +1,11 @@
 # Development docs (not for Git repo)
+dev-docs/
 .claude/template/stage/README.md
-CLI_TODO.md
 CLI_COMMANDS.md
 CLI_COMMANDS_CN.md
-PROJECT_STATUS.md
 VERSION_ROADMAP.md
 TODO.md
 note.md
-ARCHITECTURE.md
-REFACTOR.md
-PUBLISH_GUIDE.md
-PUSH_GUIDE.md
-RELEASE_CHECKLIST.md
-RELEASE_READY.md
 publish.sh
 
 # Test files

@@ -18,7 +18,13 @@
 
 **用户工作位置**: 始终在根目录 `video-workflow/` 工作
 
-**项目文件位置**: 所有项目文件在 `scripts/{project-name}-{date}/` 目录下
+**项目文件位置**: 所有项目文件在 `{SCRIPTS_DIR}/{project-name}-{date}/` 目录下
+
+**多语言目录支持**:
+- 英文目录 (`dirLang: "en"`): `scripts/`, `references/`
+- 中文目录 (`dirLang: "zh"`): `脚本/`, `参考资料/`
+
+**示例结构** (英文目录):
 
 ```
 video-workflow/                    # 用户工作目录（根目录）
@@ -39,23 +45,47 @@ video-workflow/                    # 用户工作目录（根目录）
         └── script.md              # 最终脚本
 ```
 
+**示例结构** (中文目录):
+
+```
+video-workflow/                    # 用户工作目录（根目录）
+├── .claude/                       # Agent 配置和模板库
+├── 参考资料/                       # 用户参考资料
+└── 脚本/                          # 项目目录
+    └── {project-name}-{date}/     # 具体项目
+        ├── _meta.json             # 项目元数据
+        ├── _context.md            # 项目上下文
+        ├── stages/                # 阶段输出
+        │   ├── idea.md
+        │   ├── frame.md
+        │   ├── research.md
+        │   ├── outline.md
+        │   └── draft.md
+        ├── contexts/              # 补充资料
+        ├── _archive/              # 历史版本
+        └── script.md              # 最终脚本
+```
+
 ## 完整工作流程
 
 ```
-阶段1: 选题沟通 → scripts/{project}/stages/idea.md
+阶段1: 选题沟通 → {CURRENT_PROJECT}/stages/idea.md
     ↓
-阶段2: 框架搭建 → scripts/{project}/stages/frame.md
+阶段2: 框架搭建 → {CURRENT_PROJECT}/stages/frame.md
     ↓
-阶段3: 内容调研 → scripts/{project}/stages/research.md
+阶段3: 内容调研 → {CURRENT_PROJECT}/stages/research.md
     ↓
-阶段4: 大纲确认 → scripts/{project}/stages/outline.md
+阶段4: 大纲确认 → {CURRENT_PROJECT}/stages/outline.md
     ↓
-阶段5: 脚本撰写 → scripts/{project}/stages/draft.md
+阶段5: 脚本撰写 → {CURRENT_PROJECT}/stages/draft.md
     ↓
-阶段6: 优化编辑 → scripts/{project}/stages/draft.md (更新)
+阶段6: 优化编辑 → {CURRENT_PROJECT}/stages/draft.md (更新)
     ↓
-阶段7: 最终输出 → scripts/{project}/script.md
+阶段7: 最终输出 → {CURRENT_PROJECT}/script.md
 ```
+
+**说明**: `{CURRENT_PROJECT}` 根据 `SCRIPTS_DIR` 和项目名动态设置。
+- 示例: `scripts/ai-tools-20251211` 或 `脚本/ai-tools-20251211`
 
 ---
 
@@ -65,15 +95,42 @@ video-workflow/                    # 用户工作目录（根目录）
 
 ### 1. 检测项目目录
 
-使用 `Glob` 或 `Bash` 检查 `scripts/` 目录：
+**重要**: 项目目录名称取决于用户在 `config.json` 中的 `dirLang` 设置:
+- `dirLang: "en"` → `scripts/`
+- `dirLang: "zh"` → `脚本/`
+
+**检测步骤**:
 
 ```bash
-ls scripts/
+# 步骤1: 检查 config.json 是否存在并读取 dirLang
+if [ -f "config.json" ]; then
+  dirLang=$(grep -o '"dirLang"[[:space:]]*:[[:space:]]*"[^"]*"' config.json | sed 's/.*"\([^"]*\)".*/\1/')
+  if [ "$dirLang" = "zh" ]; then
+    scriptsDir="脚本"
+  else
+    scriptsDir="scripts"
+  fi
+else
+  # 备用方案: 检查哪个目录存在
+  if [ -d "脚本" ]; then
+    scriptsDir="脚本"
+  else
+    scriptsDir="scripts"
+  fi
+fi
+
+# 步骤2: 检查项目目录
+ls "$scriptsDir/" 2>&1 || echo "${scriptsDir}目录不存在"
+```
+
+**保存检测到的目录名,供后续使用**:
+```
+SCRIPTS_DIR = {检测到的项目目录名}
 ```
 
 ### 2. 根据检测结果执行不同流程
 
-#### 情况A：`scripts/` 目录不存在或为空
+#### 情况A：项目目录不存在或为空
 
 ```
 🎬 欢迎使用视频脚本创作助手！
@@ -82,7 +139,7 @@ ls scripts/
 
 请选择：
 1. 创建新项目 - 我来帮你创建项目结构
-2. 使用 CLI 创建 - 运行 `video-workflow` 命令创建
+2. 使用 CLI 创建 - 运行 `genkicap-workflow` 命令创建
 
 请告诉我项目名称和简要描述，我来帮你创建！
 ```
@@ -94,6 +151,56 @@ ls scripts/
 4. 创建完整目录结构（参考 setup.js:254-260）
 5. 创建 `_meta.json` 和 `_context.md`
 6. 确认创建成功，开始工作
+
+**工作空间配置** (`config.json` 位于工作空间根目录):
+```json
+{
+  "mode": 1,
+  "niche": "科技/AI",
+  "platform": "YouTube",
+  "audience": "专业人士",
+  "defaultDuration": "10分钟",
+  "accountName": "@myChannel",
+  "dirLang": "zh",
+  "aiLang": "zh"
+}
+```
+
+**核心字段**：
+- `mode`: 工作空间版本/模式 (1 = Mode 1, 2 = Mode 2, 3 = Mode 3)
+  - Mode 1: 仅支持 `content-driven` (内容驱动)工作流
+  - Mode 2: 支持 `content-driven` 或 `structure-driven` (结构驱动)工作流
+  - Mode 3: 支持 `content-driven` 或 `structure-driven` 或 `data-driven` (数据驱动)工作流
+
+**项目元数据结构** (`_meta.json`):
+```json
+{
+  "projectName": "ai-tools",
+  "fullName": "ai-tools-20251211",
+  "workflowType": null,
+  "description": "AI 工具对比视频",
+  "createdAt": "2025-12-11T00:00:00.000Z",
+  "updatedAt": "2025-12-11T00:00:00.000Z",
+  "currentStage": 0,
+  "stages": [
+    { "id": 1, "name": "选题沟通", "file": "阶段/idea.md", "completed": false },
+    { "id": 2, "name": "框架搭建", "file": "阶段/frame.md", "completed": false },
+    ...
+  ]
+}
+```
+
+**核心字段**：
+- `workflowType`: 工作流类型（由 Agent 根据上下文动态判断）
+  - `null`: 尚未确定
+  - `"content-driven"`: 内容优先方法（Mode 1 默认）
+  - `"structure-driven"`: 结构优先方法（Mode 2+）
+  - `"data-driven"`: 数据驱动方法（Mode 3+）
+- Agent 根据以下情况判断 `workflowType`：
+  - 用户明确指令
+  - 工作空间模式（config.json 的 mode 字段）
+  - 项目数据检测（contexts/videos/、contexts/channels/）
+  - 当前阶段推断
 
 #### 情况B：存在单个项目
 
@@ -132,7 +239,7 @@ ls scripts/
 
 ```javascript
 // 保存到对话上下文
-CURRENT_PROJECT = "scripts/{project-name}-{date}"
+CURRENT_PROJECT = "{SCRIPTS_DIR}/{project-name}-{date}"
 ```
 
 **之后所有文件操作都使用这个路径前缀**：
@@ -140,6 +247,12 @@ CURRENT_PROJECT = "scripts/{project-name}-{date}"
 - ✅ `{CURRENT_PROJECT}/stages/frame.md`
 - ✅ `{CURRENT_PROJECT}/_archive/idea_v01.md`
 - ❌ 绝对不要直接使用 `stages/idea.md`（根目录）
+
+**示例**:
+- 如果 `SCRIPTS_DIR = "scripts"` 且项目是 `ai-tools-20251211`:
+  - `CURRENT_PROJECT = "scripts/ai-tools-20251211"`
+- 如果 `SCRIPTS_DIR = "脚本"` 且项目是 `ai-tools-20251211`:
+  - `CURRENT_PROJECT = "脚本/ai-tools-20251211"`
 
 ---
 

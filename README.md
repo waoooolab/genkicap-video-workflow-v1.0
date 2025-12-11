@@ -1,10 +1,10 @@
-# Genkicap Video Workflow v1.0 - Topic-Driven Mode
+# Genkicap Video Workflow v1.0 - 选题驱动 (Topic Selection Driven)
 
-> Professional video script creation workflow - From topic ideas to executable scripts
+> Professional video script creation workflow - Starting from "What I want to create" to executable scripts
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/waoooolab/genkicap-genkicap-workflow-v1.0)
+[![Version](https://img.shields.io/badge/version-1.0.3-blue.svg)](https://github.com/waoooolab/genkicap-genkicap-workflow-v1.0)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Mode](https://img.shields.io/badge/mode-Topic--Driven-orange.svg)](#)
+[![Mode](https://img.shields.io/badge/mode-选题驱动-orange.svg)](#)
 
 [中文文档](docs/zh-CN/README.md)
 
@@ -13,6 +13,7 @@
 ## 📖 Table of Contents
 
 - [Introduction](#introduction)
+- [What is "Topic Selection Driven"](#what-is-topic-selection-driven)
 - [Core Features](#core-features)
 - [Quick Start](#quick-start)
 - [Complete Workflow](#complete-workflow)
@@ -27,20 +28,58 @@
 
 ## Introduction
 
-**Genkicap Video Workflow v1.0** is a topic-driven video script creation workflow system. It helps creators transform a topic idea into high-quality, executable video scripts through a systematic **7-stage process**.
+**Genkicap Video Workflow v1.0** is a **topic selection driven** (选题驱动) video script creation workflow system. It helps creators transform a content idea into high-quality, executable video scripts through a systematic **7-stage process**.
+
+---
+
+## What is "Topic Selection Driven"
 
 ### Core Philosophy
 
+**Mode 1 - Topic Selection Driven**: Starting from "What content do I want to create"
+
 ```
-💡 "What content do I want to deliver" → 📝 Systematic script → 🎬 Ready for production
+💡 Content Idea → 📝 Topic Refinement → 🎯 Systematic Creation → 🎬 Executable Script
 ```
 
-### Use Cases
+### Key Characteristics
 
-- ✅ **Long-form videos** (10+ minutes)
-- ✅ **In-depth content** (tutorials, explanations, reviews)
-- ✅ **New creators** (no data accumulation required)
-- ✅ **Individual creators** or **small teams**
+**1. Content-First Approach**
+- ✨ Start from your own content ideas and viewpoints
+- 🎯 No need for data analysis or market research
+- 💭 Perfect for creators with clear content direction
+
+**2. Deep Content Polishing**
+- 📚 7-stage progressive refinement process
+- 🔍 Emphasis on content quality and viewpoint expression
+- ⏱️ Suitable for in-depth, long-form videos (1-30 minutes)
+
+**3. Beginner-Friendly**
+- 🚀 No database or technical background required
+- 📊 No need for existing data accumulation
+- 🎓 Ideal for new creators and small teams
+
+### When to Use Mode 1
+
+**✅ Perfect For:**
+- Long-form educational content (tutorials, explanations)
+- In-depth reviews and analysis
+- Documentary and storytelling
+- Opinion-based commentary
+- New accounts without data history
+
+**❌ Not Ideal For:**
+- Data-driven content optimization → Use **Mode 3 (数据驱动)**
+- Rapid short-video production → Use **Mode 2 (结构驱动)**
+- Viral content replication → Use **Mode 2 (结构驱动)**
+
+### Comparison with Other Modes
+
+| Mode | Starting Point | Strength | Best For |
+|------|---------------|----------|----------|
+| **Mode 1 - 选题驱动** | "What I want to create" | Deep content, quality focus | Long videos, new creators |
+| **Mode 2 - 结构驱动** | "How viral videos work" | Fast production, template-based | Short videos, scaling |
+| **Mode 3 - 数据驱动** | "What data says works" | Data-backed, optimized | Existing accounts, operations |
 
 ---
 

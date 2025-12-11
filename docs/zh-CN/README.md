@@ -2,7 +2,7 @@
 
 > 专业的视频脚本创作工作流 - 从选题想法到可执行脚本
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/waoooolab/genkicap-genkicap-workflow-v1.0)
+[![Version](https://img.shields.io/badge/version-1.0.3-blue.svg)](https://github.com/waoooolab/genkicap-genkicap-workflow-v1.0)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Mode](https://img.shields.io/badge/mode-Topic--Driven-orange.svg)](#)
 
@@ -833,7 +833,7 @@ scripts/
 
 **A**: v1.0、v2.0、v3.0 是独立的版本，可以共存使用：
 
-- **v1.0** (Mode 1 - 内容驱动): 适合长视频、深度内容
+- **v1.0** (Mode 1 - 选题驱动): 适合长视频、深度内容
 - **v2.0** (Mode 2 - 结构驱动): 适合短视频、快速起量
 - **v3.0** (Mode 3 - 数据驱动): 适合数据优化、规模化
 
@@ -843,7 +843,7 @@ scripts/
 
 ## 版本路线图
 
-### v1.0 (当前版本) - Mode 1 (内容驱动)
+### v1.0 (当前版本) - Mode 1 (选题驱动)
 
 **核心价值**:
 - ✅ 完整的 8 阶段流程
