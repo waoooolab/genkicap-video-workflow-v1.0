@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.5] - 2025-12-11
+
+### Fixed
+- **Bug #4**: Fixed missing `mode` and `membership` fields in configuration management
+  - `lib/modules/config.js`: `createConfiguration()` now includes all required fields (`mode`, `membership`, `templates`)
+  - Ensures consistency between full initialization and configuration recreation
+
+---
+
+## [1.0.4] - 2025-12-11
+
+### Fixed
+- **Bug #1**: Fixed missing `mode: 1` field when personal settings are skipped during initialization
+  - `lib/modules/init.js`: Ensured `mode: 1` is always saved in both complete and partial configurations
+
+- **Bug #2**: Fixed multi-language directory detection for Chinese workspaces
+  - `lib/utils/config.js`: `findScriptsDir()` now supports both `scripts/` and `脚本/` directory names
+  - `lib/modules/project.js`: Project path display now shows actual directory name instead of hardcoded `scripts/`
+
+- **Bug #3**: Fixed project creation logic to work from anywhere within workspace
+  - `lib/modules/project.js`: Removed duplicate workspace checks
+  - Now correctly searches up the directory tree to find workspace root
+  - Works from both workspace root and subdirectories
+
+### Improved
+- Project creation now works seamlessly regardless of current working directory within workspace
+- Better error messages for workspace detection failures
+
+---
+
 ## [1.0.3] - 2025-12-11
 
 ### Added
