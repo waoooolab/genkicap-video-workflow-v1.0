@@ -7,7 +7,7 @@ This directory stores all your video script projects. Each project is a complete
 ```
 scripts/
 └── {project-name}-{date}/          # Individual project directory
-    ├── _meta.json                  # Project metadata
+    ├── _meta.json                  # Project metadata (unified format)
     ├── _context.md                 # Project context
     ├── stages/                     # Stage outputs
     │   ├── idea.md                 # Stage 1: Topic ideation
@@ -25,6 +25,44 @@ scripts/
     │   └── ...
     └── script.md                   # Final script ⭐
 ```
+
+## _meta.json Format (Unified with videos/channels/accounts)
+
+```json
+{
+  "version": "1.0",
+  "project_id": "20251212-科技测评",
+  "name": "科技测评",
+  "description": "项目描述",
+  "status": "explore",
+  "stage": "idea",
+  "progress": 0,
+  "created_at": "2025-12-12T10:00:00Z",
+  "updated_at": "2025-12-12T10:00:00Z",
+  "metadata": {
+    "workflow_type": null,
+    "duration": "5分钟",
+    "platform": "B站",
+    "audience": "职场人士"
+  },
+  "stages": [
+    {
+      "id": 1,
+      "name": "idea",
+      "display_name": "选题沟通",
+      "file": "stages/idea.md",
+      "completed": false
+    }
+  ]
+}
+```
+
+**Key Features:**
+- ✅ Snake_case naming (consistent with videos/channels/accounts)
+- ✅ ISO8601 timestamps
+- ✅ Unified `project_id` format (like `channel_id`, `video_id`)
+- ✅ Simplified status management (`status` + `stage`)
+- ✅ Nested `metadata` object for extensibility
 
 ## Usage
 1. Create a new project: Run `genkicap-workflow` and select "New Project"
