@@ -1,6 +1,6 @@
 {
   "name": "@waoooo/genkicap-workflow",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Video script workflow - Content-Driven | 视频脚本工作流 - 选题梳理驱动",
   "main": "index.js",
   "bin": {

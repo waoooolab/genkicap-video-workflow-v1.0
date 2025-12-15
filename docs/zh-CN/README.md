@@ -2,7 +2,7 @@
 
 > 专业的视频脚本创作工作流 - 从选题想法到可执行脚本
 
-[![Version](https://img.shields.io/badge/version-1.0.13-blue.svg)](https://github.com/waoooolab/genkicap-genkicap-workflow-v1.0)
+[![Version](https://img.shields.io/badge/version-1.0.14-blue.svg)](https://github.com/waoooolab/genkicap-genkicap-workflow-v1.0)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Mode](https://img.shields.io/badge/mode-Topic--Driven-orange.svg)](#)
 
