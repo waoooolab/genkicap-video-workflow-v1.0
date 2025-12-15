@@ -118,8 +118,8 @@ async function showMainMenu(lang, shouldClear = true) {
     asciiArt: genkicapAscii,
     title: mainTitle,
     subtitle: 'for Claude Code',
-    version: '1.0.0',
-    github: 'https://github.com/yourusername/video-workflow'
+    version: '1.0.6',
+    github: 'https://github.com/waoooolab/genkicap-video-workflow-v1.0'
   });
 
   const indent = '  '; // Same indent as header
@@ -175,8 +175,8 @@ async function firstRunGuide(currentLang, hasGlobalConfig) {
     asciiArt: welcomeAscii,
     title: welcomeTitle,
     subtitle: '',
-    version: '1.0.0',
-    github: 'https://github.com/yourusername/video-workflow'
+    version: '1.0.6',
+    github: 'https://github.com/waoooolab/genkicap-video-workflow-v1.0'
   });
 
   let lang = currentLang;
@@ -188,7 +188,7 @@ async function firstRunGuide(currentLang, hasGlobalConfig) {
     // Save global config with selected language
     saveGlobalConfig({
       language: lang,
-      version: '1.0.0',
+      version: '1.0.6',
       createdAt: new Date().toISOString()
     });
 
