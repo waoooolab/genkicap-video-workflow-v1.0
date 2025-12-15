@@ -90,7 +90,7 @@
 ### 5. 文件管理规范
 
 **目录结构**：
-- **流程输出**：`{CURRENT_PROJECT}/{dirNames.stages}/` 存放正在工作的文件（中文：`流程输出/`，英文：`stages/`）
+- **阶段输出**：`{CURRENT_PROJECT}/{dirNames.stages}/` 存放正在工作的文件（中文：`阶段输出/`，英文：`stages/`）
 - **历史版本**：`{CURRENT_PROJECT}/{dirNames.archive}/` 存放历史版本（中文：`历史版本/`，英文：`_archive/`）
 - **最终输出**：`{CURRENT_PROJECT}/{fileNames.script}` 存放最终成果
 - **补充资料**：`{CURRENT_PROJECT}/{dirNames.contexts}/` 存放用户主动添加的资料（中文：`补充资料/`，英文：`contexts/`）
