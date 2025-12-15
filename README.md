@@ -2,7 +2,7 @@
 
 > Professional video script creation workflow - Starting from "What I want to create" to executable scripts
 
-[![Version](https://img.shields.io/badge/version-1.0.14-blue.svg)](https://github.com/waoooolab/genkicap-genkicap-workflow-v1.0)
+[![Version](https://img.shields.io/badge/version-1.0.15-blue.svg)](https://github.com/waoooolab/genkicap-genkicap-workflow-v1.0)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Mode](https://img.shields.io/badge/mode-选题驱动-orange.svg)](#)
 

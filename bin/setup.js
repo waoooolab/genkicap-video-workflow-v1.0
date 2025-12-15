@@ -51,6 +51,7 @@ const { fullInitialization } = require('../lib/modules/init');
 const { importWorkflow } = require('../lib/modules/import');
 const { createProject } = require('../lib/modules/project');
 const { configurationMenu } = require('../lib/modules/config');
+const { globalConfigMenu } = require('../lib/modules/global-config');
 const {
   upgradeMembership,
   checkUpdate,
@@ -141,6 +142,7 @@ async function showMainMenu(lang, shouldClear = true) {
 
   // 其他区
   console.log(`${indent}${theme.primary}${formatSection(t('mainMenu.section2', lang))}${colors.reset}`);
+  print.menuItem(t('mainMenu.globalConfig', lang));
   print.menuItem(t('mainMenu.lang', lang));
   print.menuItem(t('mainMenu.update', lang));
   print.menuItem(t('mainMenu.uninstall', lang));
@@ -303,6 +305,9 @@ async function main() {
         // Sub menu completed, automatically return to main menu
       } else if (choice === '5') {
         await configurationMenu(lang);
+        // Sub menu completed, automatically return to main menu
+      } else if (choice === 'G') {
+        await globalConfigMenu(lang);
         // Sub menu completed, automatically return to main menu
       } else if (choice === 'L') {
         lang = await selectLanguageInMenu(lang);
