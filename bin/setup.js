@@ -49,7 +49,7 @@ const {
 // Import business modules
 const { fullInitialization } = require('../lib/modules/init');
 const { importWorkflow } = require('../lib/modules/import');
-const { createProject } = require('../lib/modules/project');
+const { projectManagementMenu } = require('../lib/modules/project');
 const { configurationMenu } = require('../lib/modules/config');
 const { globalConfigMenu } = require('../lib/modules/global-config');
 const {
@@ -298,7 +298,7 @@ async function main() {
         await importWorkflow(lang);
         // Sub menu completed, automatically return to main menu
       } else if (choice === '3') {
-        await createProject(lang);
+        await projectManagementMenu(lang);
         // Sub menu completed, automatically return to main menu
       } else if (choice === '4') {
         await upgradeMembership(lang);
