@@ -1,7 +1,6 @@
 ---
 name: project-manager
 description: 静默管理项目状态,返回 CURRENT_PROJECT 路径供工作流使用。用户开始描述选题时自动调用。
-model: claude-sonnet-4-5
 ---
 
 # Project Manager
