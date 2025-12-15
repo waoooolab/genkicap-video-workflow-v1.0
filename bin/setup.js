@@ -118,7 +118,7 @@ async function showMainMenu(lang, shouldClear = true) {
     asciiArt: genkicapAscii,
     title: mainTitle,
     subtitle: 'for Claude Code',
-    version: '1.0.6',
+    version: '1.0.7',
     github: 'https://github.com/waoooolab/genkicap-video-workflow-v1.0'
   });
 
@@ -175,7 +175,7 @@ async function firstRunGuide(currentLang, hasGlobalConfig) {
     asciiArt: welcomeAscii,
     title: welcomeTitle,
     subtitle: '',
-    version: '1.0.6',
+    version: '1.0.7',
     github: 'https://github.com/waoooolab/genkicap-video-workflow-v1.0'
   });
 
@@ -188,7 +188,7 @@ async function firstRunGuide(currentLang, hasGlobalConfig) {
     // Save global config with selected language
     saveGlobalConfig({
       language: lang,
-      version: '1.0.6',
+      version: '1.0.7',
       createdAt: new Date().toISOString()
     });
 

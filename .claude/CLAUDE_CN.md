@@ -312,7 +312,7 @@ CURRENT_PROJECT = "{SCRIPTS_DIR}/{project_id}"
 
 ---
 
-**版本**: v1.0.6 (选题梳理驱动)
+**版本**: v1.0.7 (选题梳理驱动)
 **实现方式**: Prompt 驱动 + project-manager skill
 **模板库**: v1.0/.claude/template/
 **最后更新**: 2025-12-15
