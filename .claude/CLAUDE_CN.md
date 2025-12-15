@@ -90,15 +90,16 @@
 ### 5. 文件管理规范
 
 **目录结构**：
-- **当前版本**：`{CURRENT_PROJECT}/{dirNames.stages}/` 存放正在工作的文件
-- **历史归档**：`{CURRENT_PROJECT}/{dirNames.archive}/` 存放历史版本（v01, v02, v03...）
+- **流程输出**：`{CURRENT_PROJECT}/{dirNames.stages}/` 存放正在工作的文件（中文：`流程输出/`，英文：`stages/`）
+- **历史版本**：`{CURRENT_PROJECT}/{dirNames.archive}/` 存放历史版本（中文：`历史版本/`，英文：`_archive/`）
 - **最终输出**：`{CURRENT_PROJECT}/{fileNames.script}` 存放最终成果
-- **补充资料**：`{CURRENT_PROJECT}/{dirNames.contexts}/` 存放用户主动添加的资料
+- **补充资料**：`{CURRENT_PROJECT}/{dirNames.contexts}/` 存放用户主动添加的资料（中文：`补充资料/`，英文：`contexts/`）
 
 **文件命名规范**：
 - **阶段文件**：由 `config.json` 的 `fileNames` 字段定义，由 `project-manager` skill 自动管理
 - **中文工作空间** (`dirLang: "zh"`)：
-  - `01.选题沟通.md`、`02.框架搭建.md`、`03.内容调研.md`、`04.大纲确认.md`、`05.脚本草稿.md`
+  - `选题沟通.md`、`框架搭建.md`、`内容调研.md`、`大纲确认.md`、`脚本草稿.md`
+  - 注：无序号前缀，避免跳过阶段时序号断层（如短视频可能跳过调研和大纲）
 - **英文工作空间** (`dirLang: "en"`)：
   - `idea.md`、`frame.md`、`research.md`、`outline.md`、`draft.md`
 - **归档文件**：原文件名 + `_v01.md` / `_v02.md`（按修改顺序递增）

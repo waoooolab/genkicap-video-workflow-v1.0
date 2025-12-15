@@ -98,8 +98,9 @@ And output stage-specific files and script files.
 **File Naming Standards**:
 - **Stage files**: Defined by `config.json`'s `fileNames` field, automatically managed by `project-manager` skill
 - **Chinese workspace** (`dirLang: "zh"`):
-  - `01.	��.md`, `02.F�-�.md`, `03.��.md`, `04.'�n�.md`, `05.,I?.md`
+  - `选题沟通.md`, `框架搭建.md`, `内容调研.md`, `大纲确认.md`, `脚本草稿.md`
 - **English workspace** (`dirLang: "en"`):
+  - Note: No number prefix to avoid gaps when skipping stages (e.g., short videos may skip research and outline)
   - `idea.md`, `frame.md`, `research.md`, `outline.md`, `draft.md`
 - **Archive files**: Original filename + `_v01.md` / `_v02.md` (incrementing by modification order)
 
