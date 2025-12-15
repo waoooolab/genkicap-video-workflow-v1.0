@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.17] - 2025-12-16
+
+### Added
+- **Project Management Submenu**: New submenu for option 3 with create/view/delete/repair index features
+- **Global Configuration Management**: New "G" option in main menu for managing global settings
+- **Project Index Repair**: Automatically scan and rebuild project index from filesystem
+
+### Changed
+- Main menu option 3 upgraded from "New Project" to "Project Management"
+
+---
+
 ## [1.0.5] - 2025-12-11
 
 ### Fixed
