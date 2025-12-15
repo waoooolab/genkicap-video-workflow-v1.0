@@ -90,20 +90,20 @@
 ### 5. 文件管理规范
 
 **目录结构**：
-- **当前版本**：`{CURRENT_PROJECT}/阶段/` 存放正在工作的文件
-- **历史归档**：`{CURRENT_PROJECT}/_归档/` 存放历史版本（v01, v02, v03...）
-- **最终输出**：`{CURRENT_PROJECT}/最终脚本.md` 存放最终成果
-- **补充资料**：`{CURRENT_PROJECT}/上下文/` 存放用户主动添加的资料
+- **当前版本**：`{CURRENT_PROJECT}/{dirNames.stages}/` 存放正在工作的文件
+- **历史归档**：`{CURRENT_PROJECT}/{dirNames.archive}/` 存放历史版本（v01, v02, v03...）
+- **最终输出**：`{CURRENT_PROJECT}/{fileNames.script}` 存放最终成果
+- **补充资料**：`{CURRENT_PROJECT}/{dirNames.contexts}/` 存放用户主动添加的资料
 
 **文件命名规范**：
-- **阶段文件**（带序号前缀）：
-  - `01.选题沟通.md`
-  - `02.框架搭建.md`
-  - `03.内容调研.md`
-  - `04.大纲确认.md`
-  - `05.脚本草稿.md`
-- **归档文件**：`01.选题沟通_v01.md`、`02.框架搭建_v02.md`（按修改顺序递增）
-- **最终脚本**：`最终脚本.md`（无序号）
+- **阶段文件**：由 `config.json` 的 `fileNames` 字段定义，由 `project-manager` skill 自动管理
+- **中文工作空间** (`dirLang: "zh"`)：
+  - `01.选题沟通.md`、`02.框架搭建.md`、`03.内容调研.md`、`04.大纲确认.md`、`05.脚本草稿.md`
+- **英文工作空间** (`dirLang: "en"`)：
+  - `idea.md`、`frame.md`、`research.md`、`outline.md`、`draft.md`
+- **归档文件**：原文件名 + `_v01.md` / `_v02.md`（按修改顺序递增）
+
+**注意**：所有文件名和目录名都应从 `project-manager` skill 返回的 `config` 对象中读取，而不是硬编码。
 
 
 ## 工作流程
@@ -170,7 +170,7 @@
 5. **用户确认** - 选择角度进入下一阶段,或提出修改要求
 
 读取模版文件，根据**模版**: `.claude/template/stage/zh-CN/idea.md`
-**输出**: `{CURRENT_PROJECT}/阶段/01.选题沟通.md`
+**输出**: `{CURRENT_PROJECT}/{dirNames.stages}/{fileNames.idea}`
 
 ---
 
@@ -180,7 +180,7 @@
 
 **流程**:
 
-1. **读取选题** - 从 `{CURRENT_PROJECT}/阶段/01.选题沟通.md` 读取选题信息
+1. **读取选题** - 从 `{CURRENT_PROJECT}/{dirNames.stages}/{fileNames.idea}` 读取选题信息
 2. **确定参数** - 确认目标时长和字数（1分钟 ≈ 150-180字）
 3. **设计框架** - 分析核心概念和论证方向，设计分段框架结构
 4. **生成输出** - 读取模板文件，按模板的两步结构生成：
@@ -188,7 +188,7 @@
    - 第二步：下一步行动选项（用户确认后）
 
 根据**模版**: `.claude/template/stage/zh-CN/frame.md`
-**输出**: `{CURRENT_PROJECT}/阶段/02.框架搭建.md`
+**输出**: `{CURRENT_PROJECT}/{dirNames.stages}/{fileNames.frame}`
 
 ---
 
@@ -198,13 +198,13 @@
 
 **流程**:
 
-1. **读取前置信息** - 从 `01.选题沟通.md` 和 `02.框架搭建.md` 了解主题和结构需求
+1. **读取前置信息** - 从 `{fileNames.idea}` 和 `{fileNames.frame}` 了解主题和结构需求
 2. **WebSearch 调研** - 搜索历史背景、数据统计、真实案例、趋势分析、专家观点、竞品参考
 3. **整理素材** - 按模板的11个模块（或精简版）组织调研结果
-4. **询问补充资料** - 主动询问用户是否需要添加额外资料到 `{CURRENT_PROJECT}/上下文/` 目录
+4. **询问补充资料** - 主动询问用户是否需要添加额外资料到 `{CURRENT_PROJECT}/{dirNames.contexts}/` 目录
 
 根据**模版**: `.claude/template/stage/zh-CN/research.md`
-**输出**: `{CURRENT_PROJECT}/阶段/03.内容调研.md`
+**输出**: `{CURRENT_PROJECT}/{dirNames.stages}/{fileNames.research}`
 
 ---
 
@@ -214,7 +214,7 @@
 
 **流程**:
 
-1. **读取前置信息** - 从 `02.框架搭建.md` 和 `03.内容调研.md` 获取框架结构和素材库
+1. **读取前置信息** - 从 `{fileNames.frame}` 和 `{fileNames.research}` 获取框架结构和素材库
 2. **设计大纲** - 为每个板块生成详细要点（3-6个），分配具体素材
 3. **设计衔接** - 说明论证逻辑、信息传递顺序和板块间过渡
 4. **生成输出** - 读取模板文件，按模板的两步结构生成：
@@ -222,7 +222,7 @@
    - 第二步：下一步行动选项（用户确认后）
 
 根据**模版**: `.claude/template/stage/zh-CN/outline.md`
-**输出**: `{CURRENT_PROJECT}/阶段/04.大纲确认.md`
+**输出**: `{CURRENT_PROJECT}/{dirNames.stages}/{fileNames.outline}`
 
 ---
 
@@ -232,7 +232,7 @@
 
 **流程**:
 
-1. **读取前置信息** - 从 `01.选题沟通.md`、`04.大纲确认.md`、`03.内容调研.md` 获取必要信息（平台、时长、语言等）
+1. **读取前置信息** - 从 `{fileNames.idea}`、`{fileNames.outline}`、`{fileNames.research}` 获取必要信息（平台、时长、语言等）
 2. **确定生成方式** - 根据视频时长决定一次性生成或分段生成
 3. **平台适配** - 基于目标平台调整脚本：
    - **YouTube/B站**（中长视频）：详细铺垫、逻辑严密、Hook 20-30秒
@@ -242,7 +242,7 @@
 5. **用户确认** - 每段或整体确认
 
 根据**模版**: `.claude/template/stage/zh-CN/draft.md`
-**输出**: `{CURRENT_PROJECT}/阶段/05.脚本草稿.md`
+**输出**: `{CURRENT_PROJECT}/{dirNames.stages}/{fileNames.draft}`
 
 ---
 
@@ -254,7 +254,7 @@
 
 用户主导提出修改需求，Agent 根据具体要求执行优化（精简、扩充、重写、调整语气等）
 
-**更新文件**: `{CURRENT_PROJECT}/阶段/05.脚本草稿.md`
+**更新文件**: `{CURRENT_PROJECT}/{dirNames.stages}/{fileNames.draft}`
 
 ---
 
@@ -264,13 +264,13 @@
 
 **流程**:
 
-1. **复制脚本内容** - 从 `05.脚本草稿.md` 复制完整脚本
+1. **复制脚本内容** - 从 `{fileNames.draft}` 复制完整脚本
 2. **添加元信息** - 标题、时长、字数、日期
 3. **生成统计表格** - 各板块字数和时长统计
 4. **输出到项目根目录** - 作为最终交付成果
 
 根据**模版**: `.claude/template/stage/zh-CN/script.md`
-**输出**: `{CURRENT_PROJECT}/最终脚本.md`（保留 `05.脚本草稿.md` 作为备份）
+**输出**: `{CURRENT_PROJECT}/{fileNames.script}`（保留 `{fileNames.draft}` 作为备份）
 
 ---
 
@@ -313,6 +313,6 @@ CURRENT_PROJECT = "{SCRIPTS_DIR}/{project_id}"
 ---
 
 **版本**: v1.0.6 (选题梳理驱动)
-**实现方式**: 纯 Prompt 驱动 + 项目管理 skill
+**实现方式**: Prompt 驱动 + project-manager skill
 **模板库**: v1.0/.claude/template/
-**最后更新**: 2025-12-14
+**最后更新**: 2025-12-15
