@@ -2,7 +2,7 @@
 
 > 专业的视频脚本创作工作流 - 从选题想法到可执行脚本
 
-[![Version](https://img.shields.io/badge/version-1.0.3-blue.svg)](https://github.com/waoooolab/genkicap-genkicap-workflow-v1.0)
+[![Version](https://img.shields.io/badge/version-1.0.13-blue.svg)](https://github.com/waoooolab/genkicap-genkicap-workflow-v1.0)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Mode](https://img.shields.io/badge/mode-Topic--Driven-orange.svg)](#)
 
@@ -28,6 +28,14 @@
 ## 简介
 
 **Genkicap Video Workflow v1.0** 是一个基于选题驱动的视频脚本创作工作流系统。它帮助创作者从一个选题想法出发，通过系统化的 **7 个阶段**，逐步完善并生成高质量、可执行的视频脚本。
+
+### 实现架构
+
+**v1.0.12**: Prompt 驱动 + project-manager skill
+
+- **Prompt 驱动**: 核心工作流逻辑定义在 `.claude/CLAUDE.md` 中
+- **project-manager skill**: 自动管理项目创建、目录结构和元数据
+- **灵活工作流**: 可根据视频类型跳过某些阶段（如短视频可跳过调研和大纲）
 
 ### 核心理念
 
@@ -376,6 +384,8 @@ AI 会自动读取 `config.json` 中的配置，引导你完成 7 个阶段：
 workspace-name/                      # 用户工作空间
 ├── .claude/
 │   ├── CLAUDE.md                    # Mode 1 Agent 配置
+│   ├── skills/                      # Claude Code 技能
+│   │   └── project-manager/         # 项目管理技能
 │   └── template/
 │       ├── script/                  # 脚本模板
 │       │   ├── en-US/

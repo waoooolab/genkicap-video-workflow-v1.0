@@ -2,7 +2,7 @@
 
 > Professional video script creation workflow - Starting from "What I want to create" to executable scripts
 
-[![Version](https://img.shields.io/badge/version-1.0.3-blue.svg)](https://github.com/waoooolab/genkicap-genkicap-workflow-v1.0)
+[![Version](https://img.shields.io/badge/version-1.0.13-blue.svg)](https://github.com/waoooolab/genkicap-genkicap-workflow-v1.0)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Mode](https://img.shields.io/badge/mode-选题驱动-orange.svg)](#)
 
@@ -29,6 +29,14 @@
 ## Introduction
 
 **Genkicap Video Workflow v1.0** is a **topic selection driven** (选题驱动) video script creation workflow system. It helps creators transform a content idea into high-quality, executable video scripts through a systematic **7-stage process**.
+
+### Implementation Architecture
+
+**v1.0.12**: Prompt-Driven + project-manager skill
+
+- **Prompt-Driven**: Core workflow logic defined in `.claude/CLAUDE.md`
+- **project-manager skill**: Automatically manages project creation, directory structure, and metadata
+- **Flexible Workflow**: Stages can be skipped based on video type (e.g., short videos may skip research and outline)
 
 ---
 
@@ -302,6 +310,8 @@ Standard directory structure for each project:
 workspace-name/
 ├── .claude/
 │   ├── CLAUDE.md              # Mode 1 Agent configuration
+│   ├── skills/                # Claude Code skills
+│   │   └── project-manager/   # Project management skill
 │   └── template/
 │       ├── script/
 │       │   ├── en-US/         # English templates
@@ -314,20 +324,20 @@ workspace-name/
 ├── references/
 │   ├── _GUIDE.md              # Reference guide
 │   └── templates/             # Additional templates
-├── scripts/                    # User workspace
+├── scripts/                    # User workspace (Chinese: 脚本/)
 │   └── {project-name}/         # Specific project
-│       ├── stages/             # Stage outputs
-│       │   ├── idea.md         # Stage 1
-│       │   ├── frame.md        # Stage 2
-│       │   ├── research.md     # Stage 3
-│       │   ├── outline.md      # Stage 4
-│       │   └── draft.md        # Stage 5-6
-│       ├── contexts/           # Supplementary materials (optional)
+│       ├── stages/             # Stage outputs (Chinese: 阶段输出/)
+│       │   ├── idea.md         # Stage 1 (Chinese: 选题沟通.md)
+│       │   ├── frame.md        # Stage 2 (Chinese: 框架搭建.md)
+│       │   ├── research.md     # Stage 3 (Chinese: 内容调研.md, optional)
+│       │   ├── outline.md      # Stage 4 (Chinese: 大纲确认.md, optional)
+│       │   └── draft.md        # Stage 5-6 (Chinese: 脚本草稿.md)
+│       ├── contexts/           # Supplementary materials (Chinese: 补充资料/)
 │       │   ├── videos/         # Reference videos
 │       │   ├── research/       # Deep research
 │       │   └── accounts/       # Competitor analysis
-│       ├── _archive/           # Historical versions
-│       └── script.md           # Final script ⭐
+│       ├── _archive/           # Historical versions (Chinese: 历史版本/)
+│       └── script.md           # Final script ⭐ (Chinese: 最终脚本.md)
 ├── config.json                 # Workspace configuration
 ├── README.md                   # This document
 ├── QUICKSTART.md               # Quick start guide

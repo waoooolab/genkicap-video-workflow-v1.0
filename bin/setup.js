@@ -6,6 +6,12 @@
  */
 
 const readline = require('readline');
+const path = require('path');
+const fs = require('fs');
+
+// Read version from package.json
+const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8'));
+const VERSION = packageJson.version;
 
 // Import UI components
 const {
@@ -118,7 +124,7 @@ async function showMainMenu(lang, shouldClear = true) {
     asciiArt: genkicapAscii,
     title: mainTitle,
     subtitle: 'for Claude Code',
-    version: '1.0.7',
+    version: VERSION,
     github: 'https://github.com/waoooolab/genkicap-video-workflow-v1.0'
   });
 
@@ -175,7 +181,7 @@ async function firstRunGuide(currentLang, hasGlobalConfig) {
     asciiArt: welcomeAscii,
     title: welcomeTitle,
     subtitle: '',
-    version: '1.0.7',
+    version: VERSION,
     github: 'https://github.com/waoooolab/genkicap-video-workflow-v1.0'
   });
 
@@ -188,7 +194,7 @@ async function firstRunGuide(currentLang, hasGlobalConfig) {
     // Save global config with selected language
     saveGlobalConfig({
       language: lang,
-      version: '1.0.7',
+      version: VERSION,
       createdAt: new Date().toISOString()
     });
 
