@@ -1,6 +1,6 @@
 {
   "name": "@waoooo/genkicap-workflow",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Video script workflow - Content-Driven | 视频脚本工作流 - 选题梳理驱动",
   "main": "index.js",
   "bin": {
@@ -30,10 +30,8 @@
   "files": [
     "bin/",
     "lib/",
-    "references/_GUIDE.md",
-    "references/_GUIDE_CN.md",
-    "scripts/_GUIDE.md",
-    "scripts/_GUIDE_CN.md",
+    "参考资料/",
+    "脚本/",
     ".claude/CLAUDE.md",
     ".claude/CLAUDE_CN.md",
     ".claude/skills/",
@@ -51,13 +49,10 @@
     ".claude/template/stage/en-US/outline.md",
     ".claude/template/stage/en-US/draft.md",
     ".claude/template/stage/en-US/script.md",
-    "README.md",
-    "QUICKSTART.md",
+    "说明.md",
+    "快速开始.md",
     "INSTALL.md",
-    "LICENSE",
-    "docs/zh-CN/README.md",
-    "docs/zh-CN/QUICKSTART.md",
-    "docs/zh-CN/LICENSE"
+    "LICENSE"
   ],
   "engines": {
     "node": ">=14.0.0"

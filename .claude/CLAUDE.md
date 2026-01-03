@@ -207,7 +207,8 @@ According to **Template**: `.claude/template/stage/zh-CN/frame.md` or `en-US/fra
 1. **Read prerequisite information** - Understand theme and structure requirements from `{fileNames.idea}` and `{fileNames.frame}`
 2. **WebSearch research** - Search historical background, data statistics, real cases, trend analysis, expert opinions, competitive references
 3. **Organize materials** - Organize research results according to template's 11 modules (or simplified version)
-4. **Ask for supplementary materials** - Proactively ask if user needs to add additional materials to `{CURRENT_PROJECT}/{dirNames.contexts}/` directory
+4. **Save research materials** - If saving standalone research reports or material files, **must save to project directory** `{CURRENT_PROJECT}/{dirNames.contexts}/`, **never save to workspace root**
+5. **Ask for supplementary materials** - Proactively ask if user needs to add additional materials to `{CURRENT_PROJECT}/{dirNames.contexts}/` directory
 
 According to **Template**: `.claude/template/stage/zh-CN/research.md` or `en-US/research.md`
 **Output**: `{CURRENT_PROJECT}/{dirNames.stages}/{fileNames.research}`

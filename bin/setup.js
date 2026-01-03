@@ -56,6 +56,7 @@ const {
   upgradeMembership,
   checkUpdate,
   uninstall,
+  repairWorkspace,
 } = require('../lib/modules/other');
 
 // Create readline interface
@@ -138,6 +139,7 @@ async function showMainMenu(lang, shouldClear = true) {
   print.menuItem(t('mainMenu.project', lang));
   print.menuItem(t('mainMenu.upgrade', lang));
   print.menuItem(t('mainMenu.config', lang));
+  print.menuItem(t('mainMenu.repair', lang));
   console.log();
 
   // 其他区
@@ -305,6 +307,9 @@ async function main() {
         // Sub menu completed, automatically return to main menu
       } else if (choice === '5') {
         await configurationMenu(lang);
+        // Sub menu completed, automatically return to main menu
+      } else if (choice === '6') {
+        await repairWorkspace(lang);
         // Sub menu completed, automatically return to main menu
       } else if (choice === 'G') {
         await globalConfigMenu(lang);

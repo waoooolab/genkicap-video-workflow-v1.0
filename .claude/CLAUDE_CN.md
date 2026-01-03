@@ -207,7 +207,8 @@
 1. **读取前置信息** - 从 `{fileNames.idea}` 和 `{fileNames.frame}` 了解主题和结构需求
 2. **WebSearch 调研** - 搜索历史背景、数据统计、真实案例、趋势分析、专家观点、竞品参考
 3. **整理素材** - 按模板的11个模块（或精简版）组织调研结果
-4. **询问补充资料** - 主动询问用户是否需要添加额外资料到 `{CURRENT_PROJECT}/{dirNames.contexts}/` 目录
+4. **保存调研资料** - 如果需要保存独立的调研报告或资料文件，**必须存到项目目录** `{CURRENT_PROJECT}/{dirNames.contexts}/`，**禁止存到工作空间根目录**
+5. **询问补充资料** - 主动询问用户是否需要添加额外资料到 `{CURRENT_PROJECT}/{dirNames.contexts}/` 目录
 
 根据**模版**: `.claude/template/stage/zh-CN/research.md`
 **输出**: `{CURRENT_PROJECT}/{dirNames.stages}/{fileNames.research}`
